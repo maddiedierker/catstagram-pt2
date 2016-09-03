@@ -18,4 +18,15 @@ export class AppComponent {
   ngOnInit() {
     this.posts = this.postService.getPosts();
   }
+
+  toggleLike(id: number) {
+    let post = this.postService.getPost(id);
+    post.iLike = !post.iLike;
+
+    if (post.iLike) {
+      post.likes++;
+    } else {
+      post.likes--;
+    }
+  }
 }

@@ -30,4 +30,12 @@ export class PostService {
   getPosts() {
     return this.posts;
   }
+
+  getPost(id: number) {
+    return this.posts.find((post) => post.id == id);
+  }
+
+  deletePost(id: number) {
+
+  }
 }
